@@ -10,4 +10,5 @@ body {
 
 .data-\[state\=open\]\:duration-500[data-state="open"] {
   background: white;
+  color: #2563eb;
 }
