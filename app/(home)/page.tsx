@@ -3,8 +3,8 @@ import React from "react";
 import { currentUser } from "@clerk/nextjs/server";
 
 const page = async () => {
-  const user = await currentUser();
-  console.log("hehehehe ", user);
+  // const user = await currentUser();
+  // console.log("hehehehe ", user);
 
   return <div></div>;
 };
