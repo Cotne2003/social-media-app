@@ -1,7 +1,12 @@
+import Image from "next/image";
 import React from "react";
 
-const page = () => {
-  return <div>pagasdasdasdasdasde</div>;
+const page = async () => {
+  return (
+    <>
+      <button>go on Tsotne</button>
+    </>
+  );
 };
 
 export default page;
