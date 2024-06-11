@@ -15,6 +15,33 @@ type DataProp = {
 const HomePage = () => {
   const [playerCard, setPlayerCard] = useState<undefined | DataProp>(undefined);
   const [houseCard, setHouseCard] = useState<undefined | DataProp>(undefined);
+  const [playerWin, setPlayerWin] = useState<null | boolean>(null);
+
+  useEffect(() => {
+    if (playerCard?.id === 0) {
+      if (houseCard?.id === 1) {
+        setPlayerWin(false);
+      } else if (houseCard?.id === 2) {
+        setPlayerWin(true);
+      }
+    }
+
+    if (playerCard?.id === 1) {
+      if (houseCard?.id === 0) {
+        setPlayerWin(true);
+      } else if (houseCard?.id === 2) {
+        setPlayerWin(false);
+      }
+    }
+
+    if (playerCard?.id === 2) {
+      if (houseCard?.id === 0) {
+        setPlayerWin(false);
+      } else if (houseCard?.id === 1) {
+        setPlayerWin(true);
+      }
+    }
+  }, [houseCard]);
 
   useEffect(() => {
     if (playerCard !== undefined) {
@@ -88,9 +115,15 @@ const HomePage = () => {
               ) : (
                 <div className="w-[125px] h-[125px] rounded-[50%] bg-slate-800"></div>
               )}
-
               <h2 className="font-semibold">THE HOUSE PICKED</h2>
             </div>
+            <h1>
+              {playerWin === true
+                ? "moige"
+                : playerWin === false
+                ? "waage"
+                : "undefined"}
+            </h1>
           </div>
         </section>
       )}
