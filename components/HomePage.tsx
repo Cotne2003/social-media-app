@@ -117,13 +117,16 @@ const HomePage = () => {
               )}
               <h2 className="font-semibold">THE HOUSE PICKED</h2>
             </div>
-            <h1>
+          </div>
+          <div className="flex justify-center mt-28">
+            <h1 className="text-5xl font-bold">
               {playerWin === true
-                ? "moige"
+                ? "YOU WIN"
                 : playerWin === false
-                ? "waage"
-                : "undefined"}
+                ? "YOU LOSE"
+                : ""}
             </h1>
+            <button>PLAY AGAIN</button>
           </div>
         </section>
       )}
