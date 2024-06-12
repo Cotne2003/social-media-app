@@ -15,7 +15,7 @@ type DataProp = {
 const HomePage = () => {
   const [playerCard, setPlayerCard] = useState<undefined | DataProp>(undefined);
   const [houseCard, setHouseCard] = useState<undefined | DataProp>(undefined);
-  const [playerWin, setPlayerWin] = useState<null | boolean>(null);
+  const [playerWin, setPlayerWin] = useState<undefined | boolean>(undefined);
 
   useEffect(() => {
     if (playerCard?.id === 0) {
@@ -118,7 +118,7 @@ const HomePage = () => {
               <h2 className="font-semibold">THE HOUSE PICKED</h2>
             </div>
           </div>
-          <div className="flex justify-center mt-28">
+          <div className="flex items-center mt-28 flex-col gap-3">
             <h1 className="text-5xl font-bold">
               {playerWin === true
                 ? "YOU WIN"
@@ -126,7 +126,19 @@ const HomePage = () => {
                 ? "YOU LOSE"
                 : ""}
             </h1>
-            <button>PLAY AGAIN</button>
+            {playerWin === true ||
+              (playerWin === false && (
+                <button
+                  className="bg-white text-black w-60 rounded-lg h-12 font-bold"
+                  onClick={() => {
+                    setPlayerCard(undefined);
+                    setHouseCard(undefined);
+                    setPlayerWin(undefined);
+                  }}
+                >
+                  PLAY AGAIN
+                </button>
+              ))}
           </div>
         </section>
       )}
