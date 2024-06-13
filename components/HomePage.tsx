@@ -16,6 +16,12 @@ const HomePage = () => {
   const [playerCard, setPlayerCard] = useState<undefined | DataProp>(undefined);
   const [houseCard, setHouseCard] = useState<undefined | DataProp>(undefined);
   const [playerWin, setPlayerWin] = useState<undefined | boolean>(undefined);
+  const [playerScore, setPlayerScore] = useState(0);
+
+  useEffect(() => {
+    playerWin === true && setPlayerScore((prev) => prev + 1);
+    playerWin === false && setPlayerScore((prev) => prev - 1);
+  }, [playerWin]);
 
   useEffect(() => {
     if (playerCard?.id === 0) {
@@ -55,7 +61,7 @@ const HomePage = () => {
 
   return (
     <main className="pt-10 flex flex-col h-screen items-center">
-      <Header />
+      <Header playerScore={playerScore} />
       {playerCard === undefined ? (
         <section className="mt-[60px] h-full">
           <div className="flex flex-col items-center gap-5">
@@ -126,19 +132,18 @@ const HomePage = () => {
                 ? "YOU LOSE"
                 : ""}
             </h1>
-            {playerWin === true ||
-              (playerWin === false && (
-                <button
-                  className="bg-white text-black w-60 rounded-lg h-12 font-bold"
-                  onClick={() => {
-                    setPlayerCard(undefined);
-                    setHouseCard(undefined);
-                    setPlayerWin(undefined);
-                  }}
-                >
-                  PLAY AGAIN
-                </button>
-              ))}
+            {playerWin !== undefined && (
+              <button
+                className="bg-white text-black w-60 rounded-lg h-12 font-bold"
+                onClick={() => {
+                  setPlayerCard(undefined);
+                  setHouseCard(undefined);
+                  setPlayerWin(undefined);
+                }}
+              >
+                PLAY AGAIN
+              </button>
+            )}
           </div>
         </section>
       )}
