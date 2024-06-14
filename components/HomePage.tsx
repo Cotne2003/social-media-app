@@ -68,8 +68,9 @@ const HomePage = () => {
             <div className="flex gap-10">
               <Image
                 src={data[0].img}
-                width={125}
-                height={125}
+                width={200}
+                height={200}
+                className="max-lg:w-[125px] max-lg:h-[125px]"
                 alt="hand"
                 onClick={() => {
                   setPlayerCard(data[0]);
@@ -77,8 +78,9 @@ const HomePage = () => {
               />
               <Image
                 src={data[1].img}
-                width={125}
-                height={125}
+                width={200}
+                height={200}
+                className="max-lg:w-[125px] max-lg:h-[125px]"
                 alt="scissor"
                 onClick={() => {
                   setPlayerCard(data[1]);
@@ -88,8 +90,9 @@ const HomePage = () => {
             <div>
               <Image
                 src={data[2].img}
-                width={125}
-                height={125}
+                width={200}
+                height={200}
+                className="max-lg:w-[125px] max-lg:h-[125px]"
                 alt="fist"
                 onClick={() => {
                   setPlayerCard(data[2]);
@@ -124,7 +127,7 @@ const HomePage = () => {
               <h2 className="font-semibold">THE HOUSE PICKED</h2>
             </div>
           </div>
-          <div className="flex items-center mt-28 flex-col gap-3">
+          <div className="flex items-center mt-10 flex-col gap-3">
             <h1 className="text-5xl font-bold">
               {playerWin === true
                 ? "YOU WIN"
@@ -148,7 +151,7 @@ const HomePage = () => {
         </section>
       )}
 
-      <div className="w-[130px] absolute bottom-10">
+      <div className="w-[130px] absolute bottom-10 right-10">
         <Rules />
       </div>
     </main>
