@@ -151,7 +151,7 @@ const HomePage = () => {
         </section>
       )}
 
-      <div className="w-[130px] absolute bottom-10 right-10">
+      <div className="w-[130px] absolute bottom-10 lg:right-10">
         <Rules />
       </div>
     </main>
