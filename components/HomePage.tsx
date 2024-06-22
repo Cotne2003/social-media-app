@@ -127,7 +127,7 @@ const HomePage = () => {
               <h2 className="font-semibold">THE HOUSE PICKED</h2>
             </div>
           </div>
-          {/* <div className="flex items-center mt-10 flex-col gap-3">
+          <div className="flex items-center mt-10 flex-col gap-3">
             <h1 className="text-5xl font-bold">
               {playerWin === true
                 ? "YOU WIN"
@@ -147,13 +147,13 @@ const HomePage = () => {
                 PLAY AGAIN
               </button>
             )}
-          </div> */}
+          </div>
         </section>
       )}
 
-      {/* <div className="w-[130px] absolute bottom-10 lg:right-10">
+      <div className="w-[130px] absolute bottom-10 lg:right-10">
         <Rules />
-      </div> */}
+      </div>
     </main>
   );
 };
