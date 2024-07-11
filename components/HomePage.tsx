@@ -70,7 +70,7 @@ const HomePage = () => {
                 src={data[0].img}
                 width={200}
                 height={200}
-                className="max-lg:w-[125px] max-lg:h-[125px]"
+                className="max-lg:w-[125px] max-lg:h-[125px] lg:cursor-pointer"
                 alt="hand"
                 onClick={() => {
                   setPlayerCard(data[0]);
@@ -80,7 +80,7 @@ const HomePage = () => {
                 src={data[1].img}
                 width={200}
                 height={200}
-                className="max-lg:w-[125px] max-lg:h-[125px]"
+                className="max-lg:w-[125px] max-lg:h-[125px] lg:cursor-pointer"
                 alt="scissor"
                 onClick={() => {
                   setPlayerCard(data[1]);
@@ -92,7 +92,7 @@ const HomePage = () => {
                 src={data[2].img}
                 width={200}
                 height={200}
-                className="max-lg:w-[125px] max-lg:h-[125px]"
+                className="max-lg:w-[125px] max-lg:h-[125px] lg:cursor-pointer"
                 alt="fist"
                 onClick={() => {
                   setPlayerCard(data[2]);
@@ -104,7 +104,7 @@ const HomePage = () => {
       ) : (
         <section className="mt-[60px] h-full w-[350px] lg:w-[500px]">
           <div className="flex justify-between items-center">
-            <div className="flex flex-col items-center gap-5 lg:flex-col-reverse">
+            <div className="w-[125px] h-[125px] lg:h-[200px] lg:w-[200px] flex flex-col items-center gap-5 lg:flex-col-reverse">
               <Image
                 src={playerCard.img}
                 width={200}
@@ -113,7 +113,7 @@ const HomePage = () => {
               />
               <h2 className="font-semibold">YOU PICKED</h2>
             </div>
-            <div className="flex flex-col items-center gap-5 lg:flex-col-reverse">
+            <div className="w-[125px] h-[125px] lg:h-[200px] lg:w-[200px] flex flex-col items-center gap-5 lg:flex-col-reverse">
               {houseCard ? (
                 <Image
                   src={houseCard ? houseCard.img : ""}
@@ -122,7 +122,7 @@ const HomePage = () => {
                   alt="asd"
                 />
               ) : (
-                <div className="w-[200px] h-[200px] rounded-[50%] bg-slate-800"></div>
+                <div className="w-[125px] h-[125px] rounded-[50%] bg-slate-800"></div>
               )}
               <h2 className="font-semibold">THE HOUSE PICKED</h2>
             </div>
